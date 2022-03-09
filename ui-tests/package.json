@@ -1,0 +1,21 @@
+{
+    "name": "ui-tests",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "cypress run",
+      "cypress:run": "cypress run",
+      "cypress:open": "cypress open"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "cypress": "^9.4.1"
+    },
+    "devDependencies": {
+      "typescript": "^4.1.3"
+    }
+  }
+  
