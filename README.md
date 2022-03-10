@@ -1,6 +1,15 @@
 # UI and Contract test framework
  
 ## Usage
+
+If you just want to run the tests you only need docker. [Install Docker Desktop](https://docs.docker.com/engine/install/) 🐳
+
+☠️ **Please note ... Runnning the tests using Docker will not work on the Apple M1 ARM64** ☠️
+
+##### Run the UI test in an Docker container 
+```
+docker-compose run ui-tests npm run test
+```
  
 ### Local development
 
@@ -27,3 +36,5 @@ npm run ui-tests:run
 ```bash
 npm run ui-tests:open
 ```
+
+
