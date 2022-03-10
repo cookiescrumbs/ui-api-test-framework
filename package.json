@@ -1,31 +1,36 @@
 {
-    "name": "ui-api-tets-framework",
-    "version": "0.0.1",
-    "description": "A test framework for tetsing an apps UI and API",
-    "directories": {
-      "lib": "lib"
-    },
-    "scripts": {
-      "sandbox": "docker-compose down && REACT_APP_API_BASE_URL=http://localhost:3001 docker-compose up",
-      "ui-tests": "docker-compose down && REACT_APP_API_BASE_URL=http://backend:3001 docker-compose run ui-tests npm run test",
-      "api-tests": "docker-compose down && ENV=test docker-compose run api-tests npm run test",
-      "ui-tests:install": "npm --prefix ./ui-tests install",
-      "ui-tests:run": "CYPRESS_baseUrl=http://localhost:3000 npm --prefix ./ui-tests run cypress:run",
-      "ui-tests:open": "CYPRESS_baseUrl=http://localhost:3000 npm --prefix ./ui-tests run cypress:open",
-      "api-tests:install": "npm --prefix ./api-tests install",
-      "api-tests:run": "npm --prefix ./api-tests run test",
-      "setup-local-dev": "npm run ui-tests:install && npm run api-tests:install"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/cookiescrumbs/ui-api-test-framework.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/cookiescrumbs/ui-api-test-framework/issues"
-    },
-    "homepage": "https://github.com/cookiescrumbs/ui-api-test-framework#readme"
+  "name": "ui-api-tets-framework",
+  "version": "0.0.1",
+  "description": "A test framework for tetsing an apps UI and API",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "sandbox": "docker-compose down && REACT_APP_API_BASE_URL=http://localhost:3001 docker-compose up",
+    "ui-tests": "docker-compose down && REACT_APP_API_BASE_URL=http://backend:3001 docker-compose run ui-tests npm run test",
+    "api-tests": "docker-compose down && ENV=test docker-compose run api-tests npm run test",
+    "ui-tests:install": "npm --prefix ./ui-tests install",
+    "ui-tests:run": "CYPRESS_baseUrl=http://hotel-test.equalexperts.io npm --prefix ./ui-tests run cypress:run",
+    "ui-tests:open": "CYPRESS_baseUrl=http://hotel-test.equalexperts.io npm --prefix ./ui-tests run cypress:open",
+    "api-tests:install": "npm --prefix ./api-tests install",
+    "api-tests:run": "npm --prefix ./api-tests run test",
+    "setup-local-dev": "npm run ui-tests:install && npm run api-tests:install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cookiescrumbs/ui-api-test-framework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cookiescrumbs/ui-api-test-framework/issues"
+  },
+  "homepage": "https://github.com/cookiescrumbs/ui-api-test-framework#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "eslint": "^8.10.0",
+    "eslint-config-google": "^0.14.0"
   }
-  
+}
