@@ -5,3 +5,7 @@
 
 # Files
 *DS_Store
+
+
+cypress/videos
+cypress/screenshots
