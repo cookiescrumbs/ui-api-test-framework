@@ -1,4 +1,4 @@
-# UI and API tets framework
+# UI and API tests framework
 
 ## Usage
 

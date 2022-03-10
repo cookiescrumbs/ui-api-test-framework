@@ -21,6 +21,10 @@ Cypress.Commands.add('clickSaveBooking', () => {
   cy.get('#form > .row > :nth-child(7) > input').click();
 });
 
+Cypress.Commands.add('fillBookingSurname', (name) => {
+  cy.get('#lastname').type(name);
+});
+
 Cypress.Commands.add('stubBooking', (id, alias) => {
   cy.fixture(id).then((json) => {
     cy.intercept('GET', `/booking/${id}`, json).as(alias);
@@ -37,8 +41,23 @@ Cypress.Commands.add('interceptSaveBooking', (alias='saveBooking') => {
   cy.intercept('POST', '/booking').as(alias);
 });
 
+Cypress.Commands.add('interceptDeleteBooking', (id, alias='deleteBooking') => {
+  cy.intercept('DELETE', `/booking/${id}`).as(alias);
+});
+
 Cypress.Commands.add('responseHasStatusCode', (alias, statusCode) => {
   cy.wait(`@${alias}`).its('response.statusCode').should('eql', statusCode);
 });
 
+Cypress.Commands.add('deleteBooking', (id) => {
+  cy.get(`#${id} input`, {timeout: 10000}).click();
+});
 
+Cypress.Commands.add('fillInBookingForm', (fakeBooking) => {
+  cy.get('#firstname').type(fakeBooking.firstname);
+  cy.get('#lastname').type(fakeBooking.lastname);
+  cy.get('#totalprice').type(fakeBooking.totalprice);
+  cy.get('#depositpaid').select(fakeBooking.depositpaid);
+  cy.get('#checkin').type(fakeBooking.checkin);
+  cy.get('#checkout').type(fakeBooking.checkout);
+});
