@@ -3,6 +3,10 @@
 ## Usage
  
 ### Local development
+
+[First, you'll need to install node....](https://nodejs.dev/learn/how-to-install-nodejs) 🤖
+
+I like to use [FNM](https://github.com/Schniz/fnm) 👨🏻‍💻  and the Node Version is **16.14.0**
  
 To setup the local development for this framework you can run 🐢 💨
  
