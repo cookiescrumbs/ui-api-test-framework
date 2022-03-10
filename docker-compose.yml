@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+    ui-tests:
+      build: 
+        context: .
+        dockerfile: ui-tests.Dockerfile
+      environment:
+        CYPRESS_baseUrl: 'http://hotel-test.equalexperts.io'
+      volumes:
+        - ${PWD}/ui-tests:/ui-tests
+        # include the test framework shared library 
+        - ${PWD}/database:/database
+        - ${PWD}/test-framework-lib:/test-framework-lib
+        # use the node_modules from inside the container and not from local machine
+        - /ui-tests/node_modules
+    
+    
+
+    
