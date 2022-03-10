@@ -4,7 +4,7 @@ The Hotel booking system is aimed at our sales team so that they can make room b
 
 Scenario: Listing all bookings
     Given there are already bookings in the system
-    Then you should be able to see a list of bookings
+    Then all bookings should be listed
 
 Scenario: An individual booking
     Given there is a bookings in the system
