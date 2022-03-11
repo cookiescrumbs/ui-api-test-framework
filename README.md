@@ -6,15 +6,9 @@ If you just want to run the tests you only need docker. [Install Docker Desktop]
 
 ##### Run the UI test in an Docker container 
 
-If you have an M1, you'll need to follow the is command 🏃🏿
-```
-docker compose run ui-tests-m1 npm run test
-```
+If you have an M1, you'll need to run this command  `docker compose run ui-tests-m1 npm run test` 🏃🏿
 
-If you are on the old school Mac or anything that isn't ARM64 then you'll need to run this 🏃‍♀️
-```
-docker-compose run ui-tests npm run test
-```
+If you are on the old school Mac or anything that isn't ARM64 then you'll need to run this `docker-compose run ui-tests npm run test` 🏃‍♀️
 
 
 ### Local development
@@ -58,5 +52,6 @@ I've used the Gherkin syntax to outline the acceptance critera. I find that it c
 
 I've managed to solve the issue by creating a Docker image just for ARM64, as suggested on this [github thread](https://github.com/cypress-io/cypress-docker-images/issues/431)
 
-The built docker image can be found here [cookiescrumbs/cypress-m1:9.4.1](https://hub.docker.com/repository/docker/cookiescrumbs/cypress-m1)
+The Docker image can be found here [cookiescrumbs/cypress-m1:9.4.1](https://hub.docker.com/repository/docker/cookiescrumbs/cypress-m1)
+
 The image has Cypress v9.4.1 baked into it.
