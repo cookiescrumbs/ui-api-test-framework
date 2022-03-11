@@ -8,7 +8,9 @@ If you just want to run the tests you only need docker. [Install Docker Desktop]
 
 If you have an M1, you'll need to run this command  `docker compose run ui-tests-m1 npm run test` 🏃🏿
 
-If you are on the old school Mac or anything that isn't ARM64 then you'll need to run this `docker-compose run ui-tests npm run test` 🏃‍♀️
+If you are on the old school Mac or anything that isn't ARM64 then you'll need to run this
+
+`docker-compose run ui-tests npm run test` 🏃‍♀️
 
 
 #### Run the API tests in an Docker container 
