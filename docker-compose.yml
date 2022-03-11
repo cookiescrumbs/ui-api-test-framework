@@ -11,4 +11,15 @@ services:
         - ${PWD}/test-framework-lib:/test-framework-lib
         # use the node_modules from inside the container and not from local machine
         - /ui-tests/node_modules
+    ui-tests-m1:
+      build: 
+        context: .
+        dockerfile: ui-tests-m1.Dockerfile
+      environment:
+        CYPRESS_baseUrl: 'http://hotel-test.equalexperts.io'
+      volumes:
+        - ${PWD}/ui-tests:/ui-tests
+        - ${PWD}/test-framework-lib:/test-framework-lib
+        # use the node_modules from inside the container and not from local machine
+        - /ui-tests/node_modules
     
