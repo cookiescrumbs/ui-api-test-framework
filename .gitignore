@@ -6,6 +6,5 @@
 # Files
 *DS_Store
 
-
-cypress/videos
-cypress/screenshots
+ui-tests/cypress/videos/cypress/videos
+ui-tests/cypress/screenshots
