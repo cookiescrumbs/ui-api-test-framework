@@ -16,7 +16,6 @@ If you are on the old school Mac or anything that isn't ARM64 then you'll need t
 `docker-compose run api-tests npm run test` 🏃‍♀️
 
 
-
 ### Local development
 
 [First, you'll need to install node....](https://nodejs.dev/learn/how-to-install-nodejs) 🤖
@@ -28,20 +27,27 @@ To setup the local development for this framework you can run 🐢 💨
 ```bash
 npm run setup-local-dev
 ```
- 
+
 This will install dependencies for you to work on the UI and API tests locally.
  
-#### Run the UI test in headless mode via Cypress
+#### Run the UI test in headless mode via Cypress 🏃🏻‍♂️
  
 ```bash
 npm run ui-tests:run
 ```
  
-#### Open the UI tests in the Cypress GUI
+#### Open the UI tests in the Cypress GUI 🏃‍♀️
  
 ```bash
 npm run ui-tests:open
 ```
+
+#### Run the API tests 🏃🏿
+ 
+```bash
+npm run api-tests:run
+```
+
 
 ### Feature File .. but no cucumber?! 🥒
 
@@ -60,4 +66,4 @@ I've managed to solve the issue by creating a Docker image just for ARM64, as su
 
 The Docker image can be found here [cookiescrumbs/cypress-m1:9.4.1](https://hub.docker.com/repository/docker/cookiescrumbs/cypress-m1)
 
-The image has Cypress v9.4.1 baked into it.
+The image has Cypress v9.4.1 baked into it. 🎂
