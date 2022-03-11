@@ -10,8 +10,9 @@
     "ui-tests:install": "npm --prefix ./ui-tests install",
     "ui-tests:run": "CYPRESS_baseUrl=http://hotel-test.equalexperts.io npm --prefix ./ui-tests run cypress:run",
     "ui-tests:open": "CYPRESS_baseUrl=http://hotel-test.equalexperts.io npm --prefix ./ui-tests run cypress:open",
-    "api-tests:run": "npm --prefix ./api-tests run test",
-    "setup-local-dev": "npm run ui-tests:install"
+    "api-tests:install": "npm --prefix ./api-tests install",
+    "api-tests:run": "API_BASE_URL=http://hotel-test.equalexperts.io npm --prefix ./api-tests run test",
+    "setup-local-dev": "npm run ui-tests:install && npm run api-tests:install"
   },
   "repository": {
     "type": "git",
