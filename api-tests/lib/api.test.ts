@@ -25,7 +25,7 @@ describe('Hotel Room Booking System', () => {
       numberOfBookings = bookings.body.length;
       response = await createBooking();
     });
-    describe('Given the users fills all required fields correclty', () => {
+    describe('Given the users fills all required fields correctly', () => {
       describe('When the booking is saved', () => {
         test('Then they should be able to see the new booking', async () => {
           const newNumBookings = (await getBookings()).body.length;
@@ -36,7 +36,6 @@ describe('Hotel Room Booking System', () => {
     });
   });
 });
-
 
 const getBookings = async () => {
   return await request(API_BASE_URL)

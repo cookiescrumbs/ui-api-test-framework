@@ -22,4 +22,15 @@ services:
         - ${PWD}/test-framework-lib:/test-framework-lib
         # use the node_modules from inside the container and not from local machine
         - /ui-tests/node_modules
+        
+    api-tests:
+      build: 
+        context: .
+        dockerfile: api-tests.Dockerfile
+      environment: 
+        API_BASE_URL: 'http://hotel-test.equalexperts.io'
+      volumes:
+        - ${PWD}/api-tests:/api-tests
+        # use the node_modules from inside the container and not from local machine
+        - /api-tests/node_modules
     

@@ -1,7 +1,7 @@
 {
-  "name": "ui-contract-test-framework",
+  "name": "ui-api-test-framework",
   "version": "0.0.1",
-  "description": "A UI and Contract test framework using Cypress & Pact",
+  "description": "A UI and API test framework using Cypress & Supertest",
   "directories": {
     "lib": "lib"
   },
