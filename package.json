@@ -12,7 +12,9 @@
     "ui-tests:open": "CYPRESS_baseUrl=http://hotel-test.equalexperts.io npm --prefix ./ui-tests run cypress:open",
     "api-tests:install": "npm --prefix ./api-tests install",
     "api-tests:run": "API_BASE_URL=http://hotel-test.equalexperts.io npm --prefix ./api-tests run test",
-    "setup-local-dev": "npm run ui-tests:install && npm run api-tests:install"
+    "setup-local-dev": "npm run ui-tests:install && npm run api-tests:install",
+    "format": "prettier --write --parser typescript '**/*.ts'",
+    "lint": "eslint . --ext .ts --ignore-path .gitignore --fix"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
     "eslint": "^8.10.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "prettier": "^2.5.1"
   }
 }

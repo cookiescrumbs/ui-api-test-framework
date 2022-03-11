@@ -23,13 +23,12 @@ describe('Hotel Booking - e2e', () => {
       describe('Given the users fills all required fields correctly', () => {
         describe('When the booking is saved', () => {
           it('Then they should be able to see the new booking', () => {
-            cy.wait('@saveBooking')
-                .then((inter) => {
-                  const id = inter.response.body.bookingid;
-                  const statusCode = inter.response.statusCode;
-                  cy.deleteBooking(id);
-                  expect(statusCode).to.eql(200);
-                });
+            cy.wait('@saveBooking').then((inter) => {
+              const id = inter.response.body.bookingid;
+              const statusCode = inter.response.statusCode;
+              cy.deleteBooking(id);
+              expect(statusCode).to.eql(200);
+            });
           });
         });
       });

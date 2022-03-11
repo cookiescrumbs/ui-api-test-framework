@@ -13,14 +13,12 @@ context('Hotel Booking - isolated', () => {
   describe('Scenario: Listing all bookings', () => {
     describe('Given there are already bookings in the system', () => {
       it('Then all bookings should be listed', () => {
-        cy.wait([
-          '@bookings',
-          '@firstBooking',
-          '@secondBooking',
-        ]).then((intercepted) => {
-          const numOfBookings = intercepted[0].response.body.length;
-          cy.hasAllBookings(numOfBookings);
-        });
+        cy.wait(['@bookings', '@firstBooking', '@secondBooking']).then(
+            (intercepted) => {
+              const numOfBookings = intercepted[0].response.body.length;
+              cy.hasAllBookings(numOfBookings);
+            },
+        );
       });
     });
   });
@@ -30,17 +28,15 @@ context('Hotel Booking - isolated', () => {
       it(`Then the booking should contain the
          "Firstname", "Surname", "Price", 
          "Deposit", "Check-in" and "Check-out"`, () => {
-        cy.wait([
-          '@bookings',
-          '@firstBooking',
-          '@secondBooking',
-        ]).then((intercepted) => {
-          const firstBooking = intercepted[1].response.body;
-          cy.containsAllBookingFields(
-              `#bookings #${firstBookingId}`,
-              firstBooking,
-          );
-        });
+        cy.wait(['@bookings', '@firstBooking', '@secondBooking']).then(
+            (intercepted) => {
+              const firstBooking = intercepted[1].response.body;
+              cy.containsAllBookingFields(
+                  `#bookings #${firstBookingId}`,
+                  firstBooking,
+              );
+            },
+        );
       });
     });
   });
