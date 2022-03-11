@@ -4,7 +4,7 @@
 
 If you just want to run the tests you only need docker. [Install Docker Desktop](https://docs.docker.com/engine/install/) 🐳
 
-##### Run the UI test in an Docker container 
+#### Run the UI test in an Docker container 
 
 If you have an M1, you'll need to run this command  `docker compose run ui-tests-m1 npm run test` 🏃🏿
 
@@ -25,13 +25,13 @@ npm run setup-local-dev
  
 This will install dependencies for you to work on the UI and API tests locally.
  
-##### Run the UI test in headless mode via Cypress
+#### Run the UI test in headless mode via Cypress
  
 ```bash
 npm run ui-tests:run
 ```
  
-##### Open the UI tests in the Cypress GUI
+#### Open the UI tests in the Cypress GUI
  
 ```bash
 npm run ui-tests:open
