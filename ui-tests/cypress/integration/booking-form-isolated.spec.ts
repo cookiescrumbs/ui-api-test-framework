@@ -1,6 +1,6 @@
 // / <reference types="cypress" />
 
-context('Hotel Booking', () => {
+context('Hotel Booking - isolated', () => {
   const firstBookingId = '67620';
   const secondBookingId = '67621';
   beforeEach(() => {
