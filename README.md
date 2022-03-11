@@ -4,13 +4,15 @@
 
 If you just want to run the tests you only need docker. [Install Docker Desktop](https://docs.docker.com/engine/install/) 🐳
 
-☠️ **Please note ... Runnning the tests using Docker will not work on the Apple M1 ARM64** ☠️
+☠️ **Running the tests using Docker will not work on the Apple M1 ARM64 Processor** ☠️
+
+If you have an M1, you'll need to follow the **Local Development** steps. 🙏🏻
 
 ##### Run the UI test in an Docker container 
 ```
 docker-compose run ui-tests npm run test
 ```
- 
+
 ### Local development
 
 [First, you'll need to install node....](https://nodejs.dev/learn/how-to-install-nodejs) 🤖
@@ -37,4 +39,10 @@ npm run ui-tests:run
 npm run ui-tests:open
 ```
 
+### Feature File .. but no cucumber?! 🥒
 
+You'll find a feature file in the root of the project that outlines the scenarios that have been tested. 
+This file is written in Gherkin but you'll find no cucmber 🥒  steps in the tests.
+
+I've used the Gherkin syntax to outline the acceptance critera. I find that it can be a good tool for defining the requirements of a new feature ideally in 
+3 Amigo session.

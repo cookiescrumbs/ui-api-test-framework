@@ -6,7 +6,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "ui-tests": "docker-compose down && REACT_APP_API_BASE_URL=http://backend:3001 docker-compose run ui-tests npm run test",
+    "ui-tests": "docker-compose down && docker-compose run ui-tests npm run test",
     "ui-tests:install": "npm --prefix ./ui-tests install",
     "ui-tests:run": "CYPRESS_baseUrl=http://hotel-test.equalexperts.io npm --prefix ./ui-tests run cypress:run",
     "ui-tests:open": "CYPRESS_baseUrl=http://hotel-test.equalexperts.io npm --prefix ./ui-tests run cypress:open",
