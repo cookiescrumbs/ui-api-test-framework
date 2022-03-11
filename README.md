@@ -4,14 +4,18 @@
 
 If you just want to run the tests you only need docker. [Install Docker Desktop](https://docs.docker.com/engine/install/) 🐳
 
-☠️ **Running the tests using Docker will not work on the Apple M1 ARM64 Processor** ☠️
-
-If you have an M1, you'll need to follow the **Local Development** steps. 🙏🏻
-
 ##### Run the UI test in an Docker container 
+
+If you have an M1, you'll need to follow the is command 🏃🏿
+```
+docker compose run ui-tests-m1 npm run test
+```
+
+If you are on the old school Mac or anything that isn't ARM64 then you'll need to run this 🏃‍♀️
 ```
 docker-compose run ui-tests npm run test
 ```
+
 
 ### Local development
 
@@ -46,3 +50,13 @@ This file is written in Gherkin but you'll find no cucmber 🥒  steps in the te
 
 I've used the Gherkin syntax to outline the acceptance critera. I find that it can be a good tool for defining the requirements of a new feature ideally in 
 [3 Amigos session](https://www.agilealliance.org/glossary/three-amigos/#q=~(infinite~false~filters~(postType~(~'page~'post~'aa_book~'aa_event_session~'aa_experience_report~'aa_glossary~'aa_research_paper~'aa_video)~tags~(~'three*20amigos))~searchTerm~'~sort~false~sortDirection~'asc~page~1)) 🧟‍♀️  🧙🏻‍♀️ 🦹🏻‍♀️ 
+
+
+### Issues 👻
+
+☠️ **Running Cypress inside a Docker container using an Apple M1 ARM64 Processor has some issues** ☠️
+
+I've managed to solve the issue by creating a Docker image just for ARM64, as suggested on this [github thread](https://github.com/cypress-io/cypress-docker-images/issues/431)
+
+The built docker image can be found here [cookiescrumbs/cypress-m1:9.4.1](https://hub.docker.com/repository/docker/cookiescrumbs/cypress-m1)
+The image has Cypress v9.4.1 baked into it.
