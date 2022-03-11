@@ -39,7 +39,7 @@ npm run ui-tests:run
 npm run ui-tests:open
 ```
 
-### Feature File .. but no cucumber?! 🥒
+### Feature File .. but no cucumber?! 🥒
 
 You'll find a feature file in the root of the project that outlines the scenarios that have been tested. 
 This file is written in Gherkin but you'll find no cucmber 🥒  steps in the tests.
