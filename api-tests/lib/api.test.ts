@@ -73,7 +73,7 @@ describe('Hotel Room Booking System', () => {
 
 // These functions could be moved to the test-framework-lib
 // They can then be shared across UI and API tests for creating state
-// The test-framework is the start of a shared libaray of components
+// The test-framework-lib is the start of a shared libaray of components
 
 const getBookings = async () => {
   return await request(API_BASE_URL)
