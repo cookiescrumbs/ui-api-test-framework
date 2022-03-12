@@ -7,9 +7,11 @@
   },
   "scripts": {
     "ui-tests": "docker-compose down && docker-compose run ui-tests npm run test",
+    "ui-tests-m1": "docker-compose down && docker-compose run ui-tests-m1 npm run test",
     "ui-tests:install": "npm --prefix ./ui-tests install",
     "ui-tests:run": "CYPRESS_baseUrl=http://hotel-test.equalexperts.io npm --prefix ./ui-tests run cypress:run",
     "ui-tests:open": "CYPRESS_baseUrl=http://hotel-test.equalexperts.io npm --prefix ./ui-tests run cypress:open",
+    "api-tests": "docker-compose down && docker-compose run api-tests npm run test",
     "api-tests:install": "npm --prefix ./api-tests install",
     "api-tests:run": "API_BASE_URL=http://hotel-test.equalexperts.io npm --prefix ./api-tests run test",
     "setup-local-dev": "npm run ui-tests:install && npm run api-tests:install",
