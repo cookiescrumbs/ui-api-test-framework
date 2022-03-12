@@ -60,7 +60,7 @@ describe('Hotel Booking - e2e', () => {
         provide all the booking details`, () => {
         it('Then they can\'t complete the booking', () => {
           cy.clickSaveBooking();
-          cy.responseHasStatusCode('saveBooking', 500);
+          cy.responseHasStatusCode('saveBooking', 400);
         });
       });
     });
@@ -71,7 +71,7 @@ describe('Hotel Booking - e2e', () => {
         it('Then they can\'t complete the booking', () => {
           cy.fillBookingSurname('Morrison');
           cy.clickSaveBooking();
-          cy.responseHasStatusCode('saveBooking', 500);
+          cy.responseHasStatusCode('saveBooking', 400);
         });
       });
     });
