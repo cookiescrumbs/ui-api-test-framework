@@ -6,6 +6,7 @@
     "lib": "lib"
   },
   "scripts": {
+    "tests": "npm run ui-tests:run && npm run api-tests:run", 
     "ui-tests": "docker-compose down && docker-compose run ui-tests npm run test",
     "ui-tests-m1": "docker-compose down && docker-compose run ui-tests-m1 npm run test",
     "ui-tests:install": "npm --prefix ./ui-tests install",
