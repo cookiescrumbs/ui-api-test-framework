@@ -1,6 +1,6 @@
 // Import commands.js using ES2015 syntax:
-import "./commands";
-import { Booking } from "../../../test-framework-lib/types";
+import './commands';
+import {Booking} from '../../../test-framework-lib/types';
 
 // load type definitions that come with Cypress module
 // / <reference types="cypress" />
