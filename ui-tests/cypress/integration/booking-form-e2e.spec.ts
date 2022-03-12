@@ -1,5 +1,5 @@
 // / <reference types="cypress" />
-import {booking} from '../../../test-framework-lib/test-factories/index';
+import { booking } from '../../../test-framework-lib/test-factories/index';
 
 
 describe('Hotel Booking - e2e', () => {
@@ -21,7 +21,7 @@ describe('Hotel Booking - e2e', () => {
               cy.wait('@saveBooking').then((inter) => {
                 const id = inter.response.body.bookingid;
                 const statusCode = inter.response.statusCode;
-                cy.getBookingById(id);
+                cy.get(`#${id}`, {timeout: 10000}).should('exist');
                 cy.deleteBooking(id).then(() => {
                   expect(statusCode).to.eql(201);
                 });
@@ -35,18 +35,23 @@ describe('Hotel Booking - e2e', () => {
     describe('Scenario: Deleting a booking from the system', () => {
       describe('Given there is a booking that needs deleting ', () => {
         describe('When the user deletes the booking', () => {
-          it('Then the booking should be removed', () => {
-            cy.wait('@saveBooking')
-                .then((inter) => {
-                  return inter.response.body.bookingid;
-                })
-                .then((id) => {
-                  cy.interceptDeleteBooking(id, 'deleteBooking');
-                  cy.deleteBooking(id);
-                });
-            cy.wait('@deleteBooking')
-                .its('response.statusCode')
-                .should('eql', 200);
+          describe('Then the booking should be removed', () => {
+            it('And the response code should be 200 OK', () => {
+              cy.wait('@saveBooking')
+                  .then((inter) => {
+                    return inter.response.body.bookingid;
+                  })
+                  .then((id) => {
+                    cy.interceptDeleteBooking(id, 'deleteBooking');
+                    cy.deleteBooking(id);
+                  });
+              cy.wait('@deleteBooking').then((inter) => {
+                const id = inter.response.body.bookingid;
+                const statusCode = inter.response.statusCode;
+                cy.get(`#${id}`, {timeout: 10000}).should('not.exist');
+                expect(statusCode).to.eql(200);
+              });
+            });
           });
         });
       });
@@ -62,9 +67,11 @@ describe('Hotel Booking - e2e', () => {
     describe('Scenario: Failing to supply all the fields', () => {
       describe(`Given the user doesn\'t 
         provide all the booking details`, () => {
-        it('Then they can\'t complete the booking', () => {
-          cy.clickSaveBooking();
-          cy.responseHasStatusCode('saveBooking', 400);
+        describe('Then they can\'t complete the booking', () => {
+          it('And the response code should be 400 Bad Request', () => {
+            cy.clickSaveBooking();
+            cy.responseHasStatusCode('saveBooking', 400);
+          });
         });
       });
     });
@@ -72,10 +79,12 @@ describe('Hotel Booking - e2e', () => {
     describe('Scenario: Filling only one of the fields', () => {
       describe(`Given the user completes all 
         required booking fields apart from the "Surname"`, () => {
-        it('Then they can\'t complete the booking', () => {
-          cy.fillBookingSurname('Morrison');
-          cy.clickSaveBooking();
-          cy.responseHasStatusCode('saveBooking', 400);
+        describe('Then they can\'t complete the booking', () => {
+          it('And the response code should be 400 Bad Request', () => {
+            cy.fillBookingSurname('Morrison');
+            cy.clickSaveBooking();
+            cy.responseHasStatusCode('saveBooking', 400);
+          });
         });
       });
     });
