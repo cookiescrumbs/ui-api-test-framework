@@ -16,12 +16,16 @@ describe('Hotel Booking - e2e', () => {
     describe('Scenario: Adding a booking to the system', () => {
       describe('Given the users fills all required fields correctly', () => {
         describe('When the booking is saved', () => {
-          it('Then they should be able to see the new booking', () => {
-            cy.wait('@saveBooking').then((inter) => {
-              const id = inter.response.body.bookingid;
-              const statusCode = inter.response.statusCode;
-              cy.deleteBooking(id);
-              expect(statusCode).to.eql(200);
+          describe('Then they should be able to see the new booking', () => {
+            it('And the response code shoud be a 201 Created', () => {
+              cy.wait('@saveBooking').then((inter) => {
+                const id = inter.response.body.bookingid;
+                const statusCode = inter.response.statusCode;
+                cy.getBookingById(id);
+                cy.deleteBooking(id).then(() => {
+                  expect(statusCode).to.eql(201);
+                });
+              });
             });
           });
         });
