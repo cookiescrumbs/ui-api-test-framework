@@ -6,5 +6,5 @@ export interface Booking {
   bookingdates: {
     checkin: string;
     checkout: string;
-  }
+  };
 }
