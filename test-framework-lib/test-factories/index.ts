@@ -1,6 +1,6 @@
 import {Booking} from '../types';
 
-export const booking = (): Booking | any => {
+export const booking = (): Booking => {
   return {
     firstname: 'Jimi',
     lastname: 'Hendrix',
