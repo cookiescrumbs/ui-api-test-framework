@@ -19,7 +19,8 @@ declare global {
       responseHasStatusCode(alias: string, statusCode: number): void;
       fillBookingSurname(surname: string): void;
       fillInBookingForm(fakeBooking: Booking): void;
-      deleteBooking(id: string): void;
+      deleteBooking(id: string): Cypress.Chainable;
+      getBookingById(id: string): void;
     }
   }
 }

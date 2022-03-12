@@ -53,6 +53,11 @@ Cypress.Commands.add('deleteBooking', (id) => {
   return cy.get(`#${id} input`, {timeout: 10000}).click();
 });
 
+Cypress.Commands.add('getBookingById', (id) => {
+  cy.get(`#${id}`, {timeout: 10000});
+});
+
+
 Cypress.Commands.add('fillInBookingForm', (fakeBooking) => {
   cy.get('#firstname').type(fakeBooking.firstname);
   cy.get('#lastname').type(fakeBooking.lastname);
