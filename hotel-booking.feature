@@ -39,3 +39,4 @@ Scenario: Editing an existing booking
    When the user edits the booking
    Then the booking should amended
    And the response code should be 200 OK
+   
