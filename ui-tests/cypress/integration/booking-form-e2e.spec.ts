@@ -42,7 +42,7 @@ describe('Hotel Booking - e2e', () => {
                 });
             cy.wait('@deleteBooking')
                 .its('response.statusCode')
-                .should('eql', 201);
+                .should('eql', 200);
           });
         });
       });
