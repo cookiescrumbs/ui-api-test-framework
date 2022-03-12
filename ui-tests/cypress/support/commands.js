@@ -50,11 +50,10 @@ Cypress.Commands.add('responseHasStatusCode', (alias, statusCode) => {
 });
 
 Cypress.Commands.add('deleteBooking', (id) => {
-  cy.get(`#${id} input`, {timeout: 10000}).click();
+  return cy.get(`#${id} input`, {timeout: 10000}).click();
 });
 
 Cypress.Commands.add('fillInBookingForm', (fakeBooking) => {
-  debugger;
   cy.get('#firstname').type(fakeBooking.firstname);
   cy.get('#lastname').type(fakeBooking.lastname);
   cy.get('#totalprice').type(fakeBooking.totalprice.toString());
