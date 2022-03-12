@@ -19,7 +19,7 @@ describe('Hotel Booking - e2e', () => {
       cy.clickSaveBooking();
     });
 
-    describe.only('Scenario: Adding a booking to the system', () => {
+    describe('Scenario: Adding a booking to the system', () => {
       describe('Given the users fills all required fields correctly', () => {
         describe('When the booking is saved', () => {
           it('Then they should be able to see the new booking', () => {
