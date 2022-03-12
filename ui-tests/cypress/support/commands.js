@@ -18,7 +18,7 @@ Cypress.Commands.add('hasAllBookings', (numberOfBookings) => {
 });
 
 Cypress.Commands.add('clickSaveBooking', () => {
-  cy.get('#form > .row > :nth-child(7) > input').click();
+  cy.get('#form > .row > :nth-child(7) > input').click({force: true});
 });
 
 Cypress.Commands.add('fillBookingSurname', (name) => {
@@ -54,10 +54,11 @@ Cypress.Commands.add('deleteBooking', (id) => {
 });
 
 Cypress.Commands.add('fillInBookingForm', (fakeBooking) => {
+  debugger;
   cy.get('#firstname').type(fakeBooking.firstname);
   cy.get('#lastname').type(fakeBooking.lastname);
-  cy.get('#totalprice').type(fakeBooking.totalprice);
-  cy.get('#depositpaid').select(fakeBooking.depositpaid);
-  cy.get('#checkin').type(fakeBooking.checkin);
-  cy.get('#checkout').type(fakeBooking.checkout);
+  cy.get('#totalprice').type(fakeBooking.totalprice.toString());
+  cy.get('#depositpaid').select(fakeBooking.depositpaid.toString());
+  cy.get('#checkin').type(fakeBooking.bookingdates.checkin, {force: true});
+  cy.get('#checkout').type(fakeBooking.bookingdates.checkout, {force: true});
 });

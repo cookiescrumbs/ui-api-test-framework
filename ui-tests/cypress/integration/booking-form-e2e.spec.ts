@@ -1,16 +1,10 @@
 // / <reference types="cypress" />
-import {Booking} from '../../../test-framework-lib/types';
+import {booking} from '../../../test-framework-lib/test-factories/index';
+
 
 describe('Hotel Booking - e2e', () => {
   context('Successfully Adding and deleting a booking', () => {
-    const fakeBooking: Booking = {
-      firstname: 'Sybil',
-      lastname: 'Snee',
-      totalprice: '123.45',
-      depositpaid: 'false',
-      checkin: '2030-02-03',
-      checkout: '2030-02-06',
-    };
+    const fakeBooking = booking();
 
     beforeEach(() => {
       cy.visit('/');

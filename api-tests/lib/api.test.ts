@@ -1,5 +1,8 @@
 import * as request from 'supertest';
 
+import {booking} from '../../test-framework-lib/test-factories/index';
+
+
 const API_BASE_URL = process.env['API_BASE_URL'];
 
 let response: any;
@@ -44,17 +47,9 @@ const getBookings = async () => {
 };
 
 const createBooking = async () => {
+  const fakeBooking = booking();
   return await request(API_BASE_URL)
       .post('/booking')
-      .send({
-        firstname: 'Jimi',
-        lastname: 'Hendrix',
-        totalprice: 200.45,
-        depositpaid: true,
-        bookingdates: {
-          checkin: '2050-01-03',
-          checkout: '2050-01-14',
-        },
-      })
+      .send(fakeBooking)
       .set('Accept', 'application/json');
 };
