@@ -22,6 +22,7 @@ Scenario: Adding a booking to the system
    Given the users fills all required fields correctly
    When the booking is saved
    Then they should be able to see the new booking
+   And the response code shoud be a 201 Created
  
 Scenario: Deleting a booking from the system
    Given there is a booking that needs deleting
