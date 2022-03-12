@@ -33,6 +33,12 @@ describe('Hotel Booking - e2e', () => {
       });
     });
 
+    // Using the view to create state for tests is an anti-pattern
+    // There are some helper functions in the API tests that could be moved to
+    // the test-framework-lib and used here to create state via the API
+    // The work to create a shared component is out of
+    //  scope for this tech challenge
+
     describe('Scenario: Deleting a booking from the system', () => {
       describe('Given there is a booking that needs deleting ', () => {
         describe('When the user deletes the booking', () => {
