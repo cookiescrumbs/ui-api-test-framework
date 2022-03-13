@@ -31,7 +31,6 @@
   },
   "homepage": "https://github.com/cookiescrumbs/ui-contract-test-framework#readme",
   "devDependencies": {
-    "@faker-js/faker": "^6.0.0-beta.0",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
     "eslint": "^8.10.0",
