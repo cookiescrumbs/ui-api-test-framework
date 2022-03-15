@@ -1,5 +1,10 @@
 # UI and API test framework
- 
+
+This test framework uses [Cypress](https://www.cypress.io/) for e2e testing the UI and [SuperTest](https://github.com/visionmedia/supertest) & [Jest](https://jestjs.io) to test the API.
+All code is written in [Typescript](https://www.typescriptlang.org).
+
+There is some [Docker](https://www.docker.com/) & [Docker compose](https://docs.docker.com/compose/) 🐳  to run the tests locally in containers or via your CI/CD platform.
+
 ## Usage
 
 If you just want to run the tests you only need docker. [Install Docker Desktop](https://docs.docker.com/engine/install/) 🐳
@@ -56,7 +61,7 @@ npm run api-tests:run
 You'll find a feature file in the root of the project that outlines the scenarios that have been tested. 
 This file is written in Gherkin but you'll find no cucmber 🥒  steps in the tests.
 
-I've used the Gherkin syntax to outline the acceptance critera. I find that it can be a good tool for defining the requirements of a new feature ideally in 
+I've used the Gherkin syntax to outline the acceptance critera. I find that it can be a good tool for defining the requirements of a new feature ideally in a 
 [3 Amigos session](https://www.agilealliance.org/glossary/three-amigos/#q=~(infinite~false~filters~(postType~(~'page~'post~'aa_book~'aa_event_session~'aa_experience_report~'aa_glossary~'aa_research_paper~'aa_video)~tags~(~'three*20amigos))~searchTerm~'~sort~false~sortDirection~'asc~page~1)) 🧟‍♀️  🧙🏻‍♀️ 🦹🏻‍♀️ 
 
 
