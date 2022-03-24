@@ -3,9 +3,9 @@
 
 
 
-## Task 1 - Manual testing
+## Task 1 - Manual testing 
 
-Here are the manual test senarios performed on the Hotel Booking application
+Here are the manual test senarios performed on the Hotel Booking application 🥒
 
 ```gherkin
 Feature: Hotel Room Booking System
@@ -58,7 +58,7 @@ Please find the test framework written to automate the manaual test regression.
 
 **The automation tests the Front End app works as expected and that the HTTP response codes returned from the API are also correct.**
 
-**The HTTP codes returned from the API are incorrect thus the e2e test fail**
+⚠️ **The HTTP codes returned from the API are incorrect thus the e2e test fail** ⚠️
 
 
 ## UI and API test framework
