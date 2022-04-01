@@ -1,9 +1,16 @@
 // / <reference types="cypress" />
-import {booking} from '../../../test-framework-lib/test-factories/index';
+import {
+  booking,
+  dateInFuture,
+} from '../../../test-framework-lib/test-factories/index';
+
+
 
 describe('Hotel Booking - e2e', () => {
   context('Successfully Adding and deleting a booking', () => {
-    const fakeBooking = booking();
+    const checkIn = dateInFuture(1);
+    const checkOut = dateInFuture(2);
+    const fakeBooking = booking(checkIn, checkOut);
 
     // using the UI to create state is a bad idea
     // and I wouldn't do this normally
